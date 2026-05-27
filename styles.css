@@ -493,7 +493,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   justify-content: space-between;
   margin-top: 8px;
 }
-.detail-card__swatches { display: flex; gap: 8px; }
+.detail-card__swatches { display: flex; gap: 6px; }
 .detail-card__thumb {
   width: 44px;
   height: 44px;
@@ -510,8 +510,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .detail-card__thumb:hover img { transform: scale(1.08) }
 .detail-card__swatches span {
-  width: 28px; height: 28px; border-radius: 50%;
-  border: 1px solid var(--rule);
+  width: 26px; height: 26px; border-radius: 50%;
+  border: 1px solid rgba(0,0,0,.12);
 }
 
 @media (max-width: 820px) {
