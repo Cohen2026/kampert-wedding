@@ -20,7 +20,7 @@ nav.querySelectorAll('a').forEach(a =>
 
 
 // ----- Countdown to 23 July 2026, 6:30 PM EDT
-const TARGET = new Date('2026-07-23T18:30:00-04:00').getTime();
+const TARGET = new Date('2026-07-23T19:00:00-04:00').getTime();
 const cdEls = {
   d: document.querySelector('[data-cd="d"]'),
   h: document.querySelector('[data-cd="h"]'),
@@ -80,6 +80,26 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowRight') openLb(lbIndex + 1);
 });
 
+
+// ----- Dress card thumbnail → lightbox (no prev/next)
+document.querySelectorAll('.detail-card__thumb').forEach(btn => {
+  btn.addEventListener('click', () => {
+    lbImg.src = btn.dataset.src;
+    lb.classList.add('is-open');
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    lbPrev.style.visibility = 'hidden';
+    lbNext.style.visibility = 'hidden';
+  });
+});
+lb.addEventListener('click', () => {
+  lbPrev.style.visibility = '';
+  lbNext.style.visibility = '';
+});
+document.getElementById('lbClose').addEventListener('click', () => {
+  lbPrev.style.visibility = '';
+  lbNext.style.visibility = '';
+});
 
 // ----- RSVP multi-step form
 const form    = document.getElementById('rsvpForm');
