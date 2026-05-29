@@ -1,450 +1,164 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Cleo &amp; Paul — Meet the Kamperts · 23 . 07 . 26</title>
-<meta name="description" content="Cleo &amp; Paul Kampert invite you to celebrate their marriage on July 23, 2026 at Open House, Orlando, FL.">
-<meta property="og:title" content="Cleo &amp; Paul — Meet the Kamperts">
-<meta property="og:description" content="Join us on July 23, 2026 · Open House · Orlando, Florida">
-<meta property="og:type" content="website">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cleo &amp; Paul · July 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:  #F5F0E8;
+      --ink:    #1C1C1C;
+      --butter: #D4B896;
+      --sage:   #8A9E8C;
+      --serif:  'Cormorant Garamond', Georgia, serif;
+      --sans:   'Jost', system-ui, sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background-color: var(--cream);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 300;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100dvh;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    /* Subtle grain overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .card {
+      position: relative;
+      z-index: 1;
+      max-width: 520px;
+      width: 100%;
+      border: 1px solid rgba(28,28,28,.12);
+      padding: 4rem 3rem 3.5rem;
+      background: rgba(245,240,232,.7);
+    }
+
+    .eyebrow {
+      font-family: var(--sans);
+      font-size: .68rem;
+      font-weight: 400;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--butter);
+      margin-bottom: 2rem;
+    }
+
+    .monogram {
+      font-family: var(--serif);
+      font-size: clamp(3.5rem, 10vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: .04em;
+      margin-bottom: .5rem;
+    }
+
+    .monogram em {
+      font-style: italic;
+    }
+
+    .amp {
+      font-style: italic;
+      color: var(--butter);
+      margin: 0 .2em;
+    }
+
+    .date-line {
+      font-family: var(--sans);
+      font-size: .72rem;
+      font-weight: 400;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: rgba(28,28,28,.45);
+      margin-bottom: 3rem;
+    }
+
+    .rule {
+      width: 40px;
+      height: 1px;
+      background: var(--butter);
+      margin: 0 auto 3rem;
+    }
+
+    .message {
+      font-family: var(--serif);
+      font-size: clamp(1.1rem, 3vw, 1.35rem);
+      font-weight: 300;
+      line-height: 1.7;
+      color: rgba(28,28,28,.75);
+      margin-bottom: 2.5rem;
+    }
+
+    .sub {
+      font-family: var(--sans);
+      font-size: .72rem;
+      font-weight: 300;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(28,28,28,.38);
+    }
+
+    /* Animated dots */
+    .dots span {
+      display: inline-block;
+      animation: blink 1.4s infinite;
+      opacity: 0;
+    }
+    .dots span:nth-child(1) { animation-delay: 0s; }
+    .dots span:nth-child(2) { animation-delay: .2s; }
+    .dots span:nth-child(3) { animation-delay: .4s; }
+    @keyframes blink {
+      0%, 80%, 100% { opacity: 0; }
+      40%            { opacity: 1; }
+    }
+
+    @media (max-width: 480px) {
+      .card { padding: 3rem 1.75rem 2.75rem; }
+    }
+  </style>
 </head>
 <body>
+  <article class="card">
+    <p class="eyebrow">Orlando &middot; Florida</p>
 
-<!-- ============== NAV ============== -->
-<nav class="nav" id="nav" aria-label="Section navigation">
-  <a href="#top" class="nav__mark">C &amp; P</a>
-  <ul class="nav__links">
-    <li><a href="#story">Story</a></li>
-    <li><a href="#details">Details</a></li>
-    <li><a href="#schedule">Schedule</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#travel">Travel</a></li>
-    <li><a href="#registry">Registry</a></li>
-    <li><a href="#faq">FAQ</a></li>
-  </ul>
-  <a href="#rsvp" class="nav__cta">RSVP</a>
-  <button class="nav__burger" aria-label="Open menu" aria-expanded="false" id="burger">
-    <span></span><span></span>
-  </button>
-</nav>
-
-<!-- ============== HERO ============== -->
-<header class="hero" id="top">
-  <div class="hero__media">
-    <img src="img/p1.png" alt="Cleo and Paul walking together" />
-    <div class="hero__veil"></div>
-  </div>
-
-  <div class="hero__content">
-    <p class="eyebrow eyebrow--light">Meet the Kamperts</p>
-    <h1 class="display">
-      <span class="display__name">Cleo</span>
-      <span class="display__amp">&amp;</span>
-      <span class="display__name">Paul</span>
+    <h1 class="monogram">
+      <em>Cleo</em><span class="amp">&amp;</span><em>Paul</em>
     </h1>
-    <p class="hero__invite">we invite you to our wedding</p>
-  </div>
+    <p class="date-line">July 23, 2026</p>
 
-  <a href="#countdown" class="hero__scroll" aria-label="Scroll down">
-    <span>Scroll</span>
-    <svg viewBox="0 0 12 24" width="12" height="24" aria-hidden="true">
-      <line x1="6" y1="0" x2="6" y2="20" stroke="currentColor"/>
-      <polyline points="2,16 6,20 10,16" fill="none" stroke="currentColor"/>
-    </svg>
-  </a>
-</header>
+    <div class="rule"></div>
 
-<!-- ============== COUNTDOWN ============== -->
-<section class="band countdown" id="countdown" aria-labelledby="countdown-title">
-  <p class="eyebrow" id="countdown-title">The countdown</p>
-  <p class="countdown__date">until July 23, 2026</p>
-  <div class="countdown__grid" id="countdownGrid">
-    <div><span class="num" data-cd="d">—</span><span class="lbl">Days</span></div>
-    <div><span class="num" data-cd="h">—</span><span class="lbl">Hours</span></div>
-    <div><span class="num" data-cd="m">—</span><span class="lbl">Minutes</span></div>
-    <div><span class="num" data-cd="s">—</span><span class="lbl">Seconds</span></div>
-  </div>
-</section>
+    <p class="message">
+      We&rsquo;re putting the finishing touches on our wedding site.<br>
+      Check back soon &mdash; something beautiful is on its way.
+    </p>
 
-<!-- ============== STORY ============== -->
-<section class="story section" id="story">
-  <div class="story__col story__col--text">
-    <p class="eyebrow">Our story</p>
-    <h2 class="h2">We didn't see it coming.<br><em>But He did.</em></h2>
-
-    <p class="lede">Our journey began unexpectedly during a season when both of us were focused on becoming better individually, growing in purpose, clarity, and direction. What started as a simple conversation quickly became something we both recognized as different. There was an ease in how we spoke, a depth that came naturally, and a peace that continued to confirm itself over time.</p>
-    <p class="lede">We come from two very different worlds. Cleo is Haitian, raised in Orlando, Florida. Paul is Dutch, from the Netherlands, living in Tampa. Different cultures, different backgrounds, different paths — yet somehow our lives crossed in Florida at exactly the right time, in a way neither of us could have planned or predicted.</p>
-    <p class="lede">From the very beginning, we chose to get to know each other intentionally, moving beyond surface-level conversations into purpose, family, values, and vision. We asked real questions, had honest and sometimes uncomfortable conversations, and built something greater than we could have imagined.</p>
-    <p class="lede">Through it all, we found a friendship and a relationship grounded in faith, intentionality, and purpose, with God guiding each step forward.</p>
-    <p class="lede">Today, we are grateful for the way our paths crossed and for everything that has led us to this moment. By God's grace, we look forward to stepping into this next chapter as <em>Mr. &amp; Mrs. Kampert.</em></p>
-    <p class="lede">It would be an honor to have you join us as our guest on our special day.</p>
-
-    <blockquote class="verse">
-      <p><em>&ldquo;Though one may be overpowered by another, two can withstand him. And a threefold cord is not quickly broken.&rdquo;</em></p>
-      <cite>Ecclesiastes 4:12</cite>
-    </blockquote>
-
-    <p class="signature"><em>Cleo &amp; Paul Kampert</em></p>
-  </div>
-
-  <figure class="story__col story__col--media">
-    <img src="img/p7.png" alt="Cleo and Paul — engagement ring visible" />
-    <figcaption>Orlando, spring &rsquo;26</figcaption>
-  </figure>
-</section>
-
-<!-- ============== DETAILS ============== -->
-<section class="details section" id="details">
-  <p class="eyebrow center">The day at a glance</p>
-  <h2 class="h2 center">You're invited.</h2>
-
-  <div class="details__grid">
-
-    <article class="detail-card">
-      <p class="detail-card__label">When</p>
-      <p class="detail-card__big">07<span class="sep">·</span>23<span class="sep">·</span>26</p>
-      <p class="detail-card__sub">Thursday, the twenty-third of July<br>Two thousand twenty-six</p>
-      <p class="detail-card__line"><em>Ceremony begins at 7:00 in the evening</em></p>
-    </article>
-
-    <article class="detail-card detail-card--accent">
-      <p class="detail-card__label">Where</p>
-      <p class="detail-card__big detail-card__big--small">Open<br>House</p>
-      <p class="detail-card__sub">1325 Lee Road<br>Orlando, Florida 32810</p>
-      <a class="link-underline" href="https://maps.google.com/?q=1325+Lee+Rd,+Orlando,+FL+32810" target="_blank" rel="noopener">Open in maps ↗</a>
-    </article>
-
-    <article class="detail-card">
-      <p class="detail-card__label">Dress</p>
-      <p class="detail-card__big detail-card__big--small">Formal<br>Earth Tones</p>
-      <p class="detail-card__sub">Warm tones, luxe textures. Dress in shades of ivory, caramel, and chocolate — think polished, neutral luxury, intentional, and beautifully warm.</p>
-      <div class="detail-card__swatches-row">
-        <p class="detail-card__swatches" aria-label="Suggested palette">
-          <span style="background:#E8D5B0" title="Ivory"></span>
-          <span style="background:#B5A898" title="Taupe"></span>
-          <span style="background:#A0723C" title="Caramel"></span>
-          <span style="background:#6B3A1F" title="Chocolate"></span>
-        </p>
-        <button class="detail-card__thumb" data-src="img/attire.jpeg" aria-label="View attire example">
-          <img src="img/attire.jpeg" alt="Earth tone attire example" />
-        </button>
-      </div>
-    </article>
-
-  </div>
-</section>
-
-<!-- ============== FULL BLEED IMAGE ============== -->
-<section class="bleed">
-  <img src="img/p5.png" alt="Cleo and Paul, a joyful moment together" />
-</section>
-
-<!-- ============== SCHEDULE ============== -->
-<section class="schedule section" id="schedule">
-  <div class="schedule__head">
-    <p class="eyebrow">The evening</p>
-    <h2 class="h2">An order of events.</h2>
-  </div>
-
-  <ol class="timeline">
-    <li>
-      <span class="timeline__time">6:45<span class="timeline__pm">pm</span></span>
-      <div>
-        <h3>Arrival</h3>
-        <p>Doors open. Find your seat, find a familiar face, take a breath.</p>
-      </div>
-    </li>
-    <li class="timeline__star">
-      <span class="timeline__time">7:00<span class="timeline__pm">pm</span></span>
-      <div>
-        <h3>Ceremony</h3>
-        <p>The aisle is short, the vows are not. Held at Open House.</p>
-      </div>
-    </li>
-    <li>
-      <span class="timeline__time">7:25<span class="timeline__pm">pm</span></span>
-      <div>
-        <h3>Cocktails</h3>
-        <p>Enjoy your cocktail hour with hors d'oeuvres in the courtyard.</p>
-      </div>
-    </li>
-    <li>
-      <span class="timeline__time">8:05<span class="timeline__pm">pm</span></span>
-      <div>
-        <h3>Reception</h3>
-        <p>Dinner, followed by speeches and toasts, cake, and dancing.</p>
-      </div>
-    </li>
-    <li>
-      <span class="timeline__time">10:00<span class="timeline__pm">pm</span></span>
-      <div>
-        <h3>Send-off</h3>
-        <p>Send the newlyweds off in style with a ribbon wand send-off. We can't wait to celebrate with you.</p>
-      </div>
-    </li>
-  </ol>
-</section>
-
-<!-- ============== GALLERY ============== -->
-<section class="gallery section" id="gallery">
-  <div class="gallery__head">
-    <p class="eyebrow">Lately</p>
-    <h2 class="h2">A few of our<br><em>favourite frames.</em></h2>
-  </div>
-
-  <div class="gallery__grid" id="galleryGrid">
-    <button class="gframe" data-src="img/p2.png" aria-label="Open photo"><img src="img/p2.png" alt="Cleo and Paul by the tree"></button>
-    <button class="gframe" data-src="img/p3.png" aria-label="Open photo"><img src="img/p3.png" alt="Cleo and Paul laughing together"></button>
-    <button class="gframe" data-src="img/p4.png" aria-label="Open photo"><img src="img/p4.png" alt="Paul reaching for Cleo's hand"></button>
-    <button class="gframe" data-src="img/p6.png" aria-label="Open photo"><img src="img/p6.png" alt="Cleo and Paul together outdoors"></button>
-    <button class="gframe" data-src="img/p5.png" aria-label="Open photo"><img src="img/p5.png" alt="A joyful moment together"></button>
-    <button class="gframe" data-src="img/p7.png" aria-label="Open photo"><img src="img/p7.png" alt="Engagement ring on Cleo's hand"></button>
-  </div>
-</section>
-
-<!-- ============== LIGHTBOX ============== -->
-<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Photo viewer">
-  <button class="lightbox__close" id="lbClose" aria-label="Close">&times;</button>
-  <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" aria-label="Previous">&#8249;</button>
-  <button class="lightbox__nav lightbox__nav--next" id="lbNext" aria-label="Next">&#8250;</button>
-  <img id="lbImg" alt="">
-</div>
-
-<!-- ============== RSVP ============== -->
-<section class="rsvp section" id="rsvp">
-  <div class="rsvp__shell">
-    <div class="rsvp__intro">
-      <p class="eyebrow">Kindly reply</p>
-      <h2 class="h2">RSVP</h2>
-      <p class="lede">A line for every guest, please. Open House has a quiet capacity and we'd love to plan it just right.</p>
-      <p class="rsvp__deadline">Replies by <strong>11 July 2026</strong></p>
-    </div>
-
-    <form class="rsvp__form" id="rsvpForm" action="https://formsubmit.co/rsvp@meetthekamperts.com" method="POST" novalidate>
-      <input type="hidden" name="_subject" id="rsvpSubject" value="New RSVP — The Kamperts wedding">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_cc" value="rsvp@meetthekamperts.com">
-      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-
-      <ol class="steps" id="steps">
-        <li class="is-active" data-step="1"><span>1</span> You</li>
-        <li data-step="2"><span>2</span> Attending</li>
-        <li data-step="3"><span>3</span> Details</li>
-        <li data-step="4"><span>4</span> Sent</li>
-      </ol>
-
-      <!-- step 1: identity -->
-      <fieldset class="step is-active" data-step="1">
-        <label class="field">
-          <span>Full name</span>
-          <input name="name" type="text" placeholder="" autocomplete="name" required>
-        </label>
-        <label class="field">
-          <span>Email</span>
-          <input name="email" type="email" placeholder="you@somewhere.com" autocomplete="email" required>
-        </label>
-        <div class="step__actions">
-          <span></span>
-          <button type="button" class="btn" data-next>Continue &rarr;</button>
-        </div>
-      </fieldset>
-
-      <!-- step 2: attending -->
-      <fieldset class="step" data-step="2">
-        <p class="field__legend">Will you be joining us?</p>
-        <div class="choice-row">
-          <label class="choice">
-            <input type="radio" name="attending" value="yes" required>
-            <span class="choice__card">
-              <span class="choice__big">Yes</span>
-              <span class="choice__sub">Wouldn't miss it</span>
-            </span>
-          </label>
-          <label class="choice">
-            <input type="radio" name="attending" value="no">
-            <span class="choice__card">
-              <span class="choice__big">No</span>
-              <span class="choice__sub">With our love</span>
-            </span>
-          </label>
-        </div>
-        <div class="step__actions">
-          <button type="button" class="btn btn--ghost" data-prev>&larr; Back</button>
-          <button type="button" class="btn" data-next>Continue &rarr;</button>
-        </div>
-      </fieldset>
-
-      <!-- step 3: details -->
-      <fieldset class="step" data-step="3">
-        <label class="field">
-          <span>Any dietary needs?</span>
-          <input name="diet" type="text" placeholder="Vegetarian, allergies, anything">
-        </label>
-        <label class="field">
-          <span>A song that'll get you on the floor</span>
-          <input name="song" type="text" placeholder="Artist — Title">
-        </label>
-        <label class="field">
-          <span>A note for the couple <em>(optional)</em></span>
-          <textarea name="note" rows="3" placeholder="Anything you'd like us to read"></textarea>
-        </label>
-        <div class="step__actions">
-          <button type="button" class="btn btn--ghost" data-prev>&larr; Back</button>
-          <button type="submit" class="btn" id="submitBtn">Send reply ✓</button>
-        </div>
-      </fieldset>
-
-      <!-- step 4: confirmation -->
-      <fieldset class="step step--done" data-step="4" id="thanksStep">
-        <div class="thanks">
-          <p class="thanks__mark">✿</p>
-          <h3 class="h3">Thank you, <span id="thanksName">friend</span>.</h3>
-          <p class="thanks__from"><em>&mdash; The Kamperts</em></p>
-          <p class="thanks__msg" id="thanksMsg">Your reply is on its way to us. We can't wait to see you in July.</p>
-          <button type="button" class="link-underline" id="resetForm">Reply for someone else</button>
-        </div>
-      </fieldset>
-
-    </form>
-  </div>
-</section>
-
-<!-- ============== TRAVEL ============== -->
-<section class="travel section" id="travel">
-  <p class="eyebrow center">Getting there &amp; staying over</p>
-  <h2 class="h2 center">Travel &amp; stay.</h2>
-
-  <div class="travel__grid">
-    <article class="travel-card">
-      <p class="travel-card__cat">Fly</p>
-      <h3>Orlando International (MCO)</h3>
-      <p>About 25 minutes from the venue. Plenty of direct flights from most US cities.</p>
-    </article>
-
-    <article class="travel-card">
-      <p class="travel-card__cat">Stay &middot; 5 min</p>
-      <h3>The Alfond Inn</h3>
-      <p>Boutique hotel in Winter Park. Mention <em>"The Kamperts"</em> for our room block rate.</p>
-      <p class="travel-card__rate">from $289 / night</p>
-    </article>
-
-    <article class="travel-card">
-      <p class="travel-card__cat">Stay &middot; 12 min</p>
-      <h3>Hyatt Regency Grand Cypress</h3>
-      <p>Resort feel, generous pool, easy parking. A good landing for families.</p>
-      <p class="travel-card__rate">from $219 / night</p>
-    </article>
-
-    <article class="travel-card">
-      <p class="travel-card__cat">Drive</p>
-      <h3>Parking at Open House</h3>
-      <p>On-site lot and ample street parking along Lee Road. A short walk to the ceremony.</p>
-    </article>
-  </div>
-</section>
-
-<!-- ============== REGISTRY ============== -->
-<section class="registry section" id="registry">
-  <div class="registry__inner">
-    <div class="registry__text">
-      <p class="eyebrow">With grateful hearts</p>
-      <h2 class="h2">Registry</h2>
-      <p class="lede">Your presence at our celebration is the greatest gift we could ask for.</p>
-      <p class="lede">For those who have asked, we are working on it. Our registry and a scannable QR code will be updated right here on this page before July 23rd — check back soon.</p>
-      <p class="lede">Thank you for your love and generosity as we begin this new chapter together.</p>
-    </div>
-    <div class="registry__card">
-      <div class="registry__qr" aria-label="QR code coming soon">
-        <div class="registry__qr-corner registry__qr-corner--tl"></div>
-        <div class="registry__qr-corner registry__qr-corner--tr"></div>
-        <div class="registry__qr-corner registry__qr-corner--bl"></div>
-        <span class="registry__qr-mono"><em>C &amp; P</em></span>
-      </div>
-      <p class="registry__label">QR Code</p>
-      <p class="registry__sub">Coming closer to July 23rd</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============== FAQ ============== -->
-<section class="faq section" id="faq">
-  <div class="faq__head">
-    <p class="eyebrow">Good questions</p>
-    <h2 class="h2">In case you<br><em>were wondering.</em></h2>
-  </div>
-
-  <ul class="faq__list">
-    <li class="qa">
-      <button class="qa__q" aria-expanded="false">
-        <span>Is the ceremony indoors or out?</span>
-        <span class="qa__plus" aria-hidden="true"></span>
-      </button>
-      <div class="qa__a">
-        <p>The ceremony and cocktail hour are held outdoors, so plan accordingly. Dinner, toasts, cake, and the rest of the evening take place inside. Dress for a warm Florida night and we will take care of the rest.</p>
-      </div>
-    </li>
-    <li class="qa">
-      <button class="qa__q" aria-expanded="false">
-        <span>What's the weather like in late July?</span>
-        <span class="qa__plus" aria-hidden="true"></span>
-      </button>
-      <div class="qa__a">
-        <p>Late July in Orlando is hot and humid. Expect daytime highs in the low-to-mid 90s°F with a heat index well above 100°F. Brief but heavy afternoon thunderstorms are nearly a daily occurrence and typically clear quickly. By evening temperatures settle into the mid-to-upper 80s°F. We recommend light, breathable fabrics under your formal attire and staying well hydrated. We will have hand fans and cold towels on standby.</p>
-      </div>
-    </li>
-    <li class="qa">
-      <button class="qa__q" aria-expanded="false">
-        <span>Can I bring my kids?</span>
-        <span class="qa__plus" aria-hidden="true"></span>
-      </button>
-      <div class="qa__a">
-        <p>This is an adults-only celebration. We kindly ask that children not attend. We truly appreciate your understanding and cannot wait to celebrate with you.</p>
-      </div>
-    </li>
-    <li class="qa">
-      <button class="qa__q" aria-expanded="false">
-        <span>Is there a registry?</span>
-        <span class="qa__plus" aria-hidden="true"></span>
-      </button>
-      <div class="qa__a">
-        <p>Your presence is everything. If you'd still like to celebrate with a gift, visit the <a href="#registry" class="link-underline">Registry section</a> of this website — our registry and QR code will be posted there before July 23rd.</p>
-      </div>
-    </li>
-    <li class="qa">
-      <button class="qa__q" aria-expanded="false">
-        <span>Where do I park?</span>
-        <span class="qa__plus" aria-hidden="true"></span>
-      </button>
-      <div class="qa__a">
-        <p>The on-site lot is complimentary, with additional parking available in the back of the café. Street parking along Lee Road is also an option. Rideshare is welcomed and arguably wiser if you'd like a second glass of champagne.</p>
-      </div>
-    </li>
-    <li class="qa">
-      <button class="qa__q" aria-expanded="false">
-        <span>How do I get in touch?</span>
-        <span class="qa__plus" aria-hidden="true"></span>
-      </button>
-      <div class="qa__a">
-        <p>Use the <a href="#rsvp" class="link-underline">RSVP form above</a> to reach us. It comes directly to the couple and is the fastest way to get a response. We look forward to hearing from you.</p>
-      </div>
-    </li>
-  </ul>
-</section>
-
-<!-- ============== FOOTER ============== -->
-<footer class="foot">
-  <p class="foot__amp"><em>C &amp; P</em></p>
-  <p class="foot__name">The Kamperts</p>
-  <p class="foot__line">23 July 2026 &middot; Open House &middot; Orlando, Florida</p>
-  <p class="foot__small"><em>Soli Deo gloria. See you soon.</em></p>
-</footer>
-
-<script src="app.js"></script>
+    <p class="sub">
+      Coming soon<span class="dots"><span>.</span><span>.</span><span>.</span></span>
+    </p>
+  </article>
 </body>
 </html>
